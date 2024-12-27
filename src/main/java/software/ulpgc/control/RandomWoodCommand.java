@@ -1,6 +1,5 @@
 package software.ulpgc.control;
 
-import software.ulpgc.io.WoodDatabaseReader;
 import software.ulpgc.io.WoodReader;
 import software.ulpgc.model.Wood;
 
@@ -8,9 +7,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RandomWoodCommand implements Command{
-    private Output output;
-    private WoodReader reader;
-    private Input intput;
+    private final Output output;
+    private final WoodReader reader;
+    private final Input intput;
 
     public RandomWoodCommand(Output output, WoodReader reader, Input intput) {
         this.output = output;

@@ -39,7 +39,7 @@ public record Wood(String id,
         Japan,
         Italy,
         Poland,
-        SouthKorea;
+        SouthKorea
     }
     public enum ToneColor {
         White,
