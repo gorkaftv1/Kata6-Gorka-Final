@@ -9,7 +9,7 @@ public record Wood(String id,
                    Country country,
                    Quality quality,
                    Float pricePerSquareMeters,
-                   List<Country> importCountry) {
+                   List<Country> exportCountry) {
 
     public enum Continent {
         NorthAmerica,
@@ -39,7 +39,7 @@ public record Wood(String id,
         Japan,
         Italy,
         Poland,
-        SouthKorea
+        SouthKorea;
     }
     public enum ToneColor {
         White,
@@ -65,7 +65,7 @@ public record Wood(String id,
                 ", country='" + country + '\'' +
                 ", quality='" + quality + '\'' +
                 ", price=" + pricePerSquareMeters +
-                ", importers=" + importCountry +
+                ", exporters=" + exportCountry +
                 '}';
     }
 }

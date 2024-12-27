@@ -17,7 +17,7 @@ public class WoodDatabaseReader implements WoodReader{
 
     public WoodDatabaseReader(Connection connection) throws SQLException {
         this.connection = connection;
-        String select = "SELECT * FROM woods ORDER BY RANDOM() LIMIT 1";
+        String select = "SELECT * FROM woods ORDER BY RANDOM() LIMIT ?";
         selectstatement = connection.prepareStatement(select);
     }
 
