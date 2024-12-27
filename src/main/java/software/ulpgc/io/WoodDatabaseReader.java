@@ -4,7 +4,8 @@ import software.ulpgc.model.Wood;
 
 import java.io.File;
 import java.sql.*;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WoodDatabaseReader implements WoodReader{
     private final Connection connection;
@@ -25,9 +26,12 @@ public class WoodDatabaseReader implements WoodReader{
     }
 
     @Override
-    public Wood read() throws SQLException {
+    public List<Wood> read(int quantity) throws SQLException {
+        selectstatement.setInt(1, quantity);
         ResultSet resultSet = selectstatement.executeQuery();
-        return getWoodOf(resultSet);
+        List<Wood> woods = new ArrayList<>();
+        while (resultSet.next()) woods.add(getWoodOf(resultSet));
+        return woods;
     }
 
     private Wood getWoodOf(ResultSet resultSet) throws SQLException {
